@@ -6,6 +6,7 @@ import Footer from "../SharedComponent/Footer/Footer";
 const Root = () => {
     return (
         <div >
+            
             <Outlet></Outlet>
             <Footer></Footer>
 
