@@ -4,6 +4,7 @@ import Root from "../Root/Root";
 //import Slider from "../SharedComponent/Slider/Slider";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
+import Slider from "../SharedComponent/Slider/Slider";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
         {
           path:'/signup',
           element:<SignUp></SignUp>,
+        },
+        {
+          path:'/slider',
+          element:<Slider></Slider>
         }
        
       ]

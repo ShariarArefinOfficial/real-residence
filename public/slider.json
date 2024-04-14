@@ -1,0 +1,18 @@
+ [
+      {
+        "image": "slider1.jpg",
+        "title": "Your Dream Home Awaits",
+        "description": "Discover the perfect blend of luxury and comfort in our stunning beachfront villas."
+      },
+      {
+        "image": "slider2.jpeg",
+        "title": "Urban Living Redefined",
+        "description": "Experience the pinnacle of city living in our sleek and sophisticated penthouses."
+      },
+      {
+        "image": "slider3.jpeg",
+        "title": "Nature's Tranquility Beckons",
+        "description": "Escape the hustle and bustle in our charming mountain retreats surrounded by serene landscapes."
+      }
+    ]
+  
