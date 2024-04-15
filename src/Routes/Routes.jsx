@@ -6,6 +6,7 @@ import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 //import Slider from "../SharedComponent/Slider/Slider";
 import AllProperties from "../Pages/AllPropeties/AllProperties";
+import Property from "../SharedComponent/Property/Property";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
           element:<AllProperties></AllProperties>,
           loader:()=>fetch('propertyDetails.json')
         },
+        {
+          path:'/property/:id',
+          element:<Property></Property>
+        }
 
        
       ]

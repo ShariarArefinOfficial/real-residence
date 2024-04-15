@@ -1,7 +1,9 @@
 //import React from 'react';
 
+import { Link } from "react-router-dom";
+
 const Properties = ({pro}) => {
-    const {estate_title,image,location,price}=pro
+    const {id,estate_title,image,location,price}=pro
     console.log(pro)
   return (
     <div>
@@ -20,7 +22,9 @@ const Properties = ({pro}) => {
 
         </div>
         <div className="flex justify-center items-center mt-3">
-            <button className="bg-[#666] text-white font-medium p-4 rounded-xl ">View Details</button>
+          <Link to={`/property/${id}`}>
+          <button className="bg-[#666] text-white font-medium p-4 rounded-xl ">View Details</button>
+          </Link>
         </div>
          
       </div>
