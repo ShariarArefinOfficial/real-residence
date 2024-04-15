@@ -4,7 +4,8 @@ import Root from "../Root/Root";
 //import Slider from "../SharedComponent/Slider/Slider";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
-import Slider from "../SharedComponent/Slider/Slider";
+//import Slider from "../SharedComponent/Slider/Slider";
+import AllProperties from "../Pages/AllPropeties/AllProperties";
 
 const router = createBrowserRouter([
     {
@@ -13,7 +14,8 @@ const router = createBrowserRouter([
       children:[
         {
             path:'/',
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader:()=>fetch('propertyDetails.json')
         },
         {
           path:'/signin',
@@ -24,9 +26,11 @@ const router = createBrowserRouter([
           element:<SignUp></SignUp>,
         },
         {
-          path:'/slider',
-          element:<Slider></Slider>
-        }
+          path:'/allProperties',
+          element:<AllProperties></AllProperties>,
+          loader:()=>fetch('propertyDetails.json')
+        },
+
        
       ]
     },

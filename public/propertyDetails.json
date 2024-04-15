@@ -10,7 +10,7 @@
         "area": "2,000 sq ft",
         "location": "Suburban neighborhood, Cityville",
         "facilities": ["Living room", "Backyard garden", "Garage"],
-        "image": "cozy_family_home.jpg"
+        "image": "https://i.ibb.co/hFYF8m6/322031044.jpg"
     },
     {
         "id": "2",
@@ -23,7 +23,7 @@
         "area": "2,500 sq ft",
         "location": "Gated community, Prestige Heights",
         "facilities": ["Spacious living area", "Swimming pool", "Private terrace"],
-        "image": "modern_townhouse.jpg"
+        "image": "https://i.ibb.co/XxMV9xF/modern-townhouse-2.jpg"
     },
     {
         "id": "3",
@@ -36,7 +36,7 @@
         "area": "1,000 sq ft",
         "location": "City center, Metro Plaza",
         "facilities": ["Open-concept kitchen", "Fitness center", "24/7 security"],
-        "image": "urban_apartment.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "4",
@@ -49,7 +49,7 @@
         "area": "Varies",
         "location": "Near campus, University District",
         "facilities": ["Fully furnished rooms", "Study areas", "Common lounge"],
-        "image": "student_housing.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "5",
@@ -62,7 +62,7 @@
         "area": "Varies",
         "location": "Retirement village, Sunny Meadows",
         "facilities": ["Medical assistance", "Social activities", "Dining services"],
-        "image": "senior_living_community.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "6",
@@ -75,7 +75,7 @@
         "area": "3,500 sq ft",
         "location": "Beachfront, Paradise Cove",
         "facilities": ["Private pool", "Ocean views", "Outdoor dining area"],
-        "image": "vacation_villa.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "7",
@@ -88,7 +88,7 @@
         "area": "5,000 sq ft",
         "location": "Rural countryside, Rolling Hills",
         "facilities": ["Large living spaces", "Barn", "Pasture"],
-        "image": "ranch_house.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "8",
@@ -101,7 +101,7 @@
         "area": "1,800 sq ft",
         "location": "Downtown district, Loftview Towers",
         "facilities": ["Exposed brick walls", "High ceilings", "Roof terrace"],
-        "image": "city_loft.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "9",
@@ -114,7 +114,7 @@
         "area": "3,200 sq ft",
         "location": "Suburban neighborhood, Maple Grove",
         "facilities": ["Backyard playground", "Home office", "Covered patio"],
-        "image": "suburban_home.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "10",
@@ -127,7 +127,7 @@
         "area": "3,000 sq ft",
         "location": "Exclusive neighborhood, Summit Heights",
         "facilities": ["Private elevator", "Concierge service", "Gym"],
-        "image": "luxury_condo.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "11",
@@ -140,7 +140,7 @@
         "area": "1,500 sq ft",
         "location": "Coastal village, Seabreeze Cove",
         "facilities": ["Oceanfront deck", "Garden", "Sunroom"],
-        "image": "coastal_cottage.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "12",
@@ -153,7 +153,7 @@
         "area": "4,500 sq ft",
         "location": "Skyscraper, Skyline Tower",
         "facilities": ["Floor-to-ceiling windows", "Private rooftop pool", "Home theater"],
-        "image": "luxury_penthouse.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "13",
@@ -166,7 +166,7 @@
         "area": "2,200 sq ft",
         "location": "Private beach, Sunset Bay",
         "facilities": ["Direct beach access", "Outdoor hot tub", "Beachfront deck"],
-        "image": "beachfront_retreat.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "14",
@@ -179,7 +179,7 @@
         "area": "1,200 sq ft",
         "location": "Mountain range, Pinecrest Peaks",
         "facilities": ["Wood-burning fireplace", "Hiking trails nearby", "Wraparound deck"],
-        "image": "mountain_view_cabin.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "15",
@@ -192,7 +192,7 @@
         "area": "3,500 sq ft",
         "location": "Historic district, Heritage Lane",
         "facilities": ["Original architectural details", "Private garden", "Roof deck"],
-        "image": "historic_brownstone.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "16",
@@ -205,7 +205,7 @@
         "area": "4,000 sq ft",
         "location": "Lakefront property, Serenity Lake",
         "facilities": ["Boat dock", "Lakefront deck", "Outdoor fireplace"],
-        "image": "lakefront_family_retreat.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "17",
@@ -218,7 +218,7 @@
         "area": "1,500 sq ft",
         "location": "Central business district, Executive Towers",
         "facilities": ["High-end finishes", "24/7 concierge", "Fitness center"],
-        "image": "executive_suite.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "18",
@@ -231,7 +231,7 @@
         "area": "3,200 sq ft",
         "location": "Suburban neighborhood, Sunnyvale Estates",
         "facilities": ["Large backyard", "Home office", "Covered patio"],
-        "image": "suburban_villa.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "19",
@@ -244,7 +244,7 @@
         "area": "5,000 sq ft",
         "location": "Private beachfront, Paradise Sands",
         "facilities": ["Infinity pool", "Private beach access", "Outdoor kitchen"],
-        "image": "luxury_beach_house.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     },
     {
         "id": "20",
@@ -257,6 +257,6 @@
         "area": "2,000 sq ft",
         "location": "Ski resort, Snowy Peaks",
         "facilities": ["Ski-in/ski-out access", "Hot tub", "Mountain views"],
-        "image": "ski_chalet.jpg"
+        "image": "https://i.ibb.co/tXFByqG/images.jpg"
     }
 ]
