@@ -2,10 +2,14 @@
 
 import { createContext, useEffect, useState } from "react";
 import app from "../firebase/firebase.config";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
 
 export const AuthContext = createContext(null);
+
 const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
 
 const AuthProviders = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -18,6 +22,37 @@ const AuthProviders = ({ children }) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
+
+    //Google AUth
+
+    const googleSignIn=()=>{
+      signInWithPopup(auth,provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+      });
+    }
+//update user
+const updateUserProifile=(name,photo)=>{
+  updateProfile(auth.currentUser, {
+    displayName: name, photoURL: photo
+  })
+}
+
     const logOut = () => {
         setLoading(true);
         return signOut(auth);
@@ -38,6 +73,8 @@ const AuthProviders = ({ children }) => {
     createUser,
     signIn,
     logOut,
+    googleSignIn,
+    updateUserProifile,
 
   };
   return (

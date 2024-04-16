@@ -10,8 +10,8 @@ import { AuthContext }  from "../../authProvider/AuthProviders"
 const SignIn = () => {
     //const { signIn } = useContext(AuthContext);
     const info = useContext(AuthContext)
-    const {signIn}=info;
-    console.log(signIn)
+    const {signIn,googleSignIn}=info;
+    console.log(googleSignIn)
   const handleLogin = (e) => {   
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -71,6 +71,11 @@ const SignIn = () => {
               Sign Up
             </Link>
           </p>
+          <div className="p-5 flex flex-row justify-center items-center gap-4">
+          <button onClick={()=>googleSignIn()} className="btn btn-success">Sign In with Google</button>
+          <button className="btn btn-success">Sign In with Github</button>
+
+          </div>
           </div>
         </div>
       </div>

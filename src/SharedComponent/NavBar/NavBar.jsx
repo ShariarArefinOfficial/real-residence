@@ -1,8 +1,21 @@
 //import React from 'react';
 
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../authProvider/AuthProviders";
+import userPicture from '../../assets/user.png'
+
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleSignOut = () => {
+    logOut()
+        .then()
+        .catch()
+}
+
+
+console.log(user)
   const navLinks = (
     <>
       <li>
@@ -11,6 +24,17 @@ const NavBar = () => {
       <li>
         <NavLink to="/allProperties">All Properties</NavLink>
       </li>
+      {
+        user ?
+        <>
+        <li>
+        <NavLink to='/updateProfile'>Update Profile</NavLink>
+       </li>
+        </>
+        :
+        <></>
+      }
+ 
     </>
   );
   return (
@@ -39,16 +63,39 @@ const NavBar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               {navLinks}
+              
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Real Residence</a>
+          <Link to='/' className="btn btn-ghost text-xl">Real Residence</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-          <Link to='/signin' className="btn bg-blue-600 mr-2">Sign In</Link>
-          <Link  to='/signup' className="btn bg-green-600">Sign Up</Link>
+
+        
+            {
+                    user ?
+                    <>
+                    <Link>
+                    
+                      
+                    <img src={user.photoURL ? user.photoURL : userPicture } alt="" className="w-10 rounded-full mr-4" />
+              
+                    </Link>
+                        <button onClick={handleSignOut} className="btn">Sign Out</button>
+                    </>
+                        :
+                        <>
+                        <Link to='/signin' className="btn bg-blue-600 mr-2">Sign In</Link>
+                        <Link  to='/signup' className="btn bg-green-600">Sign Up</Link>
+                        </>
+                }
+
+
+
+
+          
 
         </div>
       </div>

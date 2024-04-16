@@ -7,6 +7,8 @@ import SignUp from "../Pages/SignUp/SignUp";
 //import Slider from "../SharedComponent/Slider/Slider";
 import AllProperties from "../Pages/AllPropeties/AllProperties";
 import Property from "../SharedComponent/Property/Property";
+import PrivateRoutes from "./PrivateRoutes";
+import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 
 const router = createBrowserRouter([
     {
@@ -16,7 +18,7 @@ const router = createBrowserRouter([
         {
             path:'/',
             element:<Home></Home>,
-            loader:()=>fetch('propertyDetails.json')
+            loader:()=>fetch('/propertyDetails.json')
         },
         {
           path:'/signin',
@@ -29,11 +31,16 @@ const router = createBrowserRouter([
         {
           path:'/allProperties',
           element:<AllProperties></AllProperties>,
-          loader:()=>fetch('propertyDetails.json')
+          loader:()=>fetch('/propertyDetails.json')
         },
         {
           path:'/property/:id',
-          element:<Property></Property>
+          element:<PrivateRoutes><Property></Property></PrivateRoutes>,
+          loader:()=>fetch('/propertyDetails.json')
+        },
+        {
+          path:'/updateProfile',
+          element:<UpdateProfile></UpdateProfile>
         }
 
        
