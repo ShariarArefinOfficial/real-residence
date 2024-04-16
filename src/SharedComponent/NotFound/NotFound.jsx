@@ -2,10 +2,13 @@
 
 import { Link } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
+import PageTitle from "../PageTitle/PageTitle";
 
 const NotFound = () => {
+    const title='404-Real Residence'
     return (
         <>
+        <PageTitle title={title}></PageTitle>
         <NavBar></NavBar>
         <div className="text-center">
             <div className="text-center">

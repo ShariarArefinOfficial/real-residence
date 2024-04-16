@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import NavBar from "../../SharedComponent/NavBar/NavBar";
 import { useContext } from "react";
 import { AuthContext } from "../../authProvider/AuthProviders";
+import PageTitle from "../../SharedComponent/PageTitle/PageTitle";
 
 const UpdateProfile = () => {
     const {updateUserProifile}=useContext(AuthContext)
@@ -24,9 +25,11 @@ const UpdateProfile = () => {
             console.log('404')
           });
         }
+        const title='Update Profile-Real Residence'
+
     return (
         <div>
-           
+           <PageTitle title={title}></PageTitle>
             <div className=" min-h-screen flex flex-col justify-center items-center m-5">
             <div className="w-full md:w-1/2 border-2 border-blue-500 rounded-xl p-5">
                 <h2 className="text-3xl my-10 text-center font-bold">Sign Up Now</h2>

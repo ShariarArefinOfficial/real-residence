@@ -1,6 +1,12 @@
+import PageTitle from "../../SharedComponent/PageTitle/PageTitle";
+
 const ContactUs = () => {
+    const title='Contact Us-Real Residence'
+
   return (
     <div>
+        <PageTitle title={title}></PageTitle>
+
        <div className="bg-[#666666] p-10">
                 <h1 className="text-3xl text-center font-bold text-white ">Contact Us</h1>
         </div>
