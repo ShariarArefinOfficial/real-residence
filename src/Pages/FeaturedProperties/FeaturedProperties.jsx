@@ -9,7 +9,7 @@ const FeaturedProperties = ({data}) => {
     
     
 
-    console.log(data.slice(0,2))
+   // console.log(data.slice(0,2))
     return (
         <div className="my-12">
             <h3 className="font-medium text-center text-3xl text-[#000]">FEATURED PROPERTIES</h3>

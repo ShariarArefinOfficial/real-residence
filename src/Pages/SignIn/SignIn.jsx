@@ -32,7 +32,7 @@ const SignIn = () => {
   return (
     <div >
       <div>
-        <NavBar></NavBar>
+        
         <div className=" min-h-screen flex flex-col justify-center items-center" >
           <div className="w-full md:w-1/2 border-2 border-blue-500 rounded-xl p-5">
           <h2 className="text-3xl my-10 text-center font-bold">Sign In Now</h2>

@@ -40,7 +40,7 @@ const Slider = () => {
 
   return (
     <>
-       <div className=' mt-4'>
+       <div className=' mt-4 '>
         <Swiper
         style={{
           '--swiper-navigation-color': '#fff',

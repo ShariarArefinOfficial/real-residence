@@ -9,9 +9,7 @@ const AllProperties = () => {
     const prop=useLoaderData()
     return (
         <div>
-            <div className=" max-w-screen-xl mx-auto">
-            <NavBar></NavBar>
-            </div>
+            
             <div className="bg-[#666666] p-10">
                 <h1 className="text-3xl text-center font-bold text-white ">View All Properties</h1>
             </div>

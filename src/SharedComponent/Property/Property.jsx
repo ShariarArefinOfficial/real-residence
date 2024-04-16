@@ -42,8 +42,26 @@ const Property = () => {
               <p className="text-2xl text-[#666]"><span className="text-black  font-bold">Property Name:</span>{estate_title}</p>
               <p className="text-2xl text-[#666]"><span className="text-black  font-bold">Property Type:</span>{type}</p>
               <p className="text-2xl text-[#666]"><span className="text-black  font-bold">Property Status:</span>{status}</p>
+              <p className="text-2xl text-[#666]"><span className="text-black  font-bold">Property Segment Name:</span>{segment_name}</p>
               <p className="text-2xl text-[#666]"><span className="text-black  font-bold">Property Name:</span>{area}</p>
               <p className="text-2xl text-[#666]">{description}</p>
+              <div className=" flex flex-col justify-center items-center">
+                <p className="text-2xl  font-bold">Facilities:</p>
+              <ul>
+              {
+                facilities.map((data,idx)=><li
+                key={idx}
+                 className="text-xl font-medium text-center text-[#666]"><span>{idx+1}.</span>{data}</li>)
+              }
+              </ul>
+              </div>
+              <div className="flex flex-col justify-center items-center gap-5 my-3">
+              <p className=" text-xl rounded-xl font-medium">Location : {location}</p>
+              <p className=" text-xl rounded-xl font-medium">price:{price}</p>
+
+
+            </div>
+              
 
               </div>
             </div>

@@ -8,8 +8,8 @@ import FeaturedProperties from "../FeaturedProperties/FeaturedProperties";
 const Home = () => {
     const data=useLoaderData();
     return (
-        <div className=" max-w-screen-xl mx-auto">
-            <NavBar></NavBar>
+        <div >
+           
             <Slider></Slider>
             <FeaturedProperties
             data={data}

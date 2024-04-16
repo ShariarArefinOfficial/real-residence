@@ -3,19 +3,15 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../authProvider/AuthProviders";
-import userPicture from '../../assets/user.png'
-
+import userPicture from "../../assets/user.png";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const handleSignOut = () => {
-    logOut()
-        .then()
-        .catch()
-}
+    logOut().then().catch();
+  };
 
-
-console.log(user)
+  console.log(user)
   const navLinks = (
     <>
       <li>
@@ -24,21 +20,27 @@ console.log(user)
       <li>
         <NavLink to="/allProperties">All Properties</NavLink>
       </li>
-      {
-        user ?
+      {user ? (
         <>
-        <li>
-        <NavLink to='/updateProfile'>Update Profile</NavLink>
-       </li>
+          <li>
+            <NavLink to="/updateProfile">Update Profile</NavLink>
+          </li>
+          <li>
+            <NavLink to="/myprofile">My Profile</NavLink>
+      </li>
         </>
-        :
+      ) : (
         <></>
-      }
- 
+      )}
+      <li>
+            <NavLink to="/contactUS">Contact Us</NavLink>
+      </li>
+      
+
     </>
   );
   return (
-    <div >
+    <div className="pt-4">
       <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
@@ -63,40 +65,54 @@ console.log(user)
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               {navLinks}
-              
             </ul>
           </div>
-          <Link to='/' className="btn btn-ghost text-xl">Real Residence</Link>
+          <Link to="/" className="btn btn-ghost text-xl">
+            Real Residence
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-
-        
-            {
-                    user ?
-                    <>
-                    <Link>
-                    
-                      
-                    <img src={user.photoURL ? user.photoURL : userPicture } alt="" className="w-10 rounded-full mr-4" />
+          {user ? (
+            <>
+              <div className="dropdown  dropdown-hover mr-0 md:mr-10 ">
+                <div tabIndex={0} role="button" className="btn m-1">
+                <Link>
+                <img
+                  src={user.photoURL}
+                  alt=""
+                  className="w-10 rounded-full mr-4"
+                />
+              </Link>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content z-20 menu p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <li>
+                    <Link>{user.displayName}</Link>
+                  </li>
+                  <li>
+                  <button onClick={handleSignOut} className="btn">
+                Sign Out
+              </button>
+                  </li>
+                </ul>
+              </div>
               
-                    </Link>
-                        <button onClick={handleSignOut} className="btn">Sign Out</button>
-                    </>
-                        :
-                        <>
-                        <Link to='/signin' className="btn bg-blue-600 mr-2">Sign In</Link>
-                        <Link  to='/signup' className="btn bg-green-600">Sign Up</Link>
-                        </>
-                }
-
-
-
-
-          
-
+            </>
+          ) : (
+            <>
+              <Link to="/signin" className="btn bg-blue-600 mr-2">
+                Sign In
+              </Link>
+              <Link to="/signup" className="btn bg-green-600">
+                Sign Up
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>

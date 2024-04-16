@@ -2,14 +2,23 @@
 
 import { Link, Navigate, useLocation } from "react-router-dom";
 import NavBar from "../../SharedComponent/NavBar/NavBar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../authProvider/AuthProviders";
 import { useForm } from "react-hook-form";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const SignUp = () => {
     const { createUser,updateUserProifile } = useContext(AuthContext);
+    const [registerError,setRegisterError]=useState('');
+    //const [registerSuccess,setRegisterSuccess]=useState('');
+    const [show,setShow]=useState(false)
+
     const location = useLocation();
-    console.log(location.pathname);
+    console.log(location?.state);
 
 
     const handleRegister = e => {
@@ -26,7 +35,7 @@ const SignUp = () => {
          createUser(email, password)
          .then(result => {
              console.log(result.user)
-             updateUserProifile
+             updateUserProifile()
          })
          .catch(error => {
              console.error(error)
@@ -44,13 +53,39 @@ const SignUp = () => {
       
       const onSubmit = (data) => {
         const {email,password,name,photo}=data;
+
+        setRegisterError('');
+       // setRegisterSuccess('')
+
+        if(password.length<6){
+            setRegisterError('Password Must Be 6 character')
+            toast.error("Password Must Be 6 character");
+            return;
+
+        }
+        else if(!/[A-Z]/.test(password)){
+            setRegisterError('At leat One UpperCase needed');
+            toast.error("At leat One UpperCase needed");
+          return;
+        }
+        else if(!/[a-z]/.test(password)){
+            setRegisterError('At leat One UpperCase needed');
+            toast.error("At leat One LowerCase needed");
+            return;
+        }
+        
+
+          
+
+
          // create user
          createUser(email, password)
          .then(result => {
-             console.log(result.user)
+            toast.success("Sign Up SuccessFull!");
              updateUserProifile(name,photo)
              .then(()=>{
-                return <Navigate state={location.pathname} to="/"></Navigate>
+               // setRegisterSuccess('Sign Up Completed')
+                return <Navigate  to="/"></Navigate>
              })
          })
          .catch(error => {
@@ -60,7 +95,7 @@ const SignUp = () => {
 
     return (
         <div>
-            <NavBar></NavBar>
+            
             <div className=" min-h-screen flex flex-col justify-center items-center m-5">
             <div className="w-full md:w-1/2 border-2 border-blue-500 rounded-xl p-5">
                 <h2 className="text-3xl my-10 text-center font-bold">Sign Up Now</h2>
@@ -87,16 +122,32 @@ const SignUp = () => {
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="password" required {...register("password", { required: true })} name="password" placeholder="Password" className="input input-bordered" />
+                        <div className="flex flex-row items-center">
+                        <input 
+                        type={show ? "text" : "password"} 
+                        required {...register("password", { required: true })} name="password" placeholder="Password" className="input input-bordered w-full" />
+                        <span onClick={()=>setShow(!show)} className="-ml-10">
+                            {
+                                show ?
+                                <MdOutlineRemoveRedEye></MdOutlineRemoveRedEye>
+                                :
+                                <FaRegEyeSlash></FaRegEyeSlash>
+                            }
+                            </span>
+                        </div>
                        
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Sign Up</button>
                     </div>
                 </form>
+             
+             
                 <p className="text-center mt-4">Already have an account? <Link className="text-blue-600 font-bold" to="/signin">Login</Link></p>
             </div>
             </div>
+            <ToastContainer />
+
         </div>
     );
 };

@@ -9,11 +9,15 @@ import AllProperties from "../Pages/AllPropeties/AllProperties";
 import Property from "../SharedComponent/Property/Property";
 import PrivateRoutes from "./PrivateRoutes";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
+import NotFound from "../SharedComponent/NotFound/NotFound";
+import ContactUs from "../Pages/ContactUs/ContactUs";
+import Profile from "../Pages/Profile/Profile";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement:<NotFound></NotFound>,
       children:[
         {
             path:'/',
@@ -41,7 +45,16 @@ const router = createBrowserRouter([
         {
           path:'/updateProfile',
           element:<UpdateProfile></UpdateProfile>
+        },
+        {
+          path:'/contactUS',
+          element:<ContactUs></ContactUs>,
+        },
+        {
+          path:'/myprofile',
+          element:<Profile></Profile>,
         }
+
 
        
       ]
