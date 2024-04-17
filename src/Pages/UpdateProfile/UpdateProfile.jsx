@@ -19,11 +19,7 @@ const UpdateProfile = () => {
         const {photo,name}=data;
          // create user
          updateUserProifile(name,photo)
-         .then(() => {
-            console.log('user Updated')
-          }).catch((error) => {
-            console.log('404')
-          });
+        
         }
         const title='Update Profile-Real Residence'
 
@@ -32,7 +28,7 @@ const UpdateProfile = () => {
            <PageTitle title={title}></PageTitle>
             <div className=" min-h-screen flex flex-col justify-center items-center m-5">
             <div className="w-full md:w-1/2 border-2 border-blue-500 rounded-xl p-5">
-                <h2 className="text-3xl my-10 text-center font-bold">Sign Up Now</h2>
+                <h2 className="text-3xl my-10 text-center font-bold">Update Your Profile</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className=" md:w-3/4 lg:w-1/2 mx-auto">
                     <div className="form-control">
                         <label className="label">
@@ -45,6 +41,12 @@ const UpdateProfile = () => {
                             <span className="label-text">Photo URL</span>
                         </label>
                         <input type="text" required {...register("photo")} name="photo" placeholder="Photo URL" className="input input-bordered" />
+                    </div>
+                     <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Email</span>
+                        </label>
+                        <input type="email" required {...register("email")} name="email" placeholder="Email" className="input input-bordered" />
                     </div>
                    
                     

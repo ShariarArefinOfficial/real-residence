@@ -1,13 +1,14 @@
 //import React from 'react';
 
 import { Link } from "react-router-dom";
+import 'animate.css';
 
 const Properties = ({pro}) => {
     const {id,estate_title,image,location,price,status,area,segment_name}=pro
     //console.log(pro)
   return (
     <div>
-      <div className=" p-4 bg-white border-2  w-96  image-full rounded-xl">
+      <div className=" p-4 bg-white border-2  w-96  image-full rounded-xl animate__animated  animate__fadeInUp">
         <figure >
           <img
            src={image} 

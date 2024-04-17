@@ -5,6 +5,8 @@ import { useLoaderData } from "react-router-dom";
 import Slider from "../../SharedComponent/Slider/Slider";
 import FeaturedProperties from "../FeaturedProperties/FeaturedProperties";
 import PageTitle from "../../SharedComponent/PageTitle/PageTitle";
+import ExplorePlace from "../../SharedComponent/ExplorePlace/ExplorePlace";
+import OurAgent from "../../SharedComponent/OurAgent/OurAgent";
 
 const Home = () => {
     const data=useLoaderData();
@@ -16,6 +18,8 @@ const Home = () => {
             <FeaturedProperties
             data={data}
             ></FeaturedProperties>
+            <ExplorePlace></ExplorePlace>
+            <OurAgent></OurAgent>
 
             
             
