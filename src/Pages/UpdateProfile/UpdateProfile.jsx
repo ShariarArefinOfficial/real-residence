@@ -5,9 +5,14 @@ import NavBar from "../../SharedComponent/NavBar/NavBar";
 import { useContext } from "react";
 import { AuthContext } from "../../authProvider/AuthProviders";
 import PageTitle from "../../SharedComponent/PageTitle/PageTitle";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Result } from "postcss";
 
 const UpdateProfile = () => {
-    const {updateUserProifile}=useContext(AuthContext)
+    const navigate=useNavigate();
+    const location=useLocation();
+    const form =location?.state || '/'
+    const {user,updateUserProifile}=useContext(AuthContext)
     const {
         register,
         handleSubmit,
@@ -18,7 +23,10 @@ const UpdateProfile = () => {
       const onSubmit = (data) => {
         const {photo,name}=data;
          // create user
-         updateUserProifile(name,photo)
+         if(user){
+            updateUserProifile(name,photo)
+            navigate(form)
+         }
         
         }
         const title='Update Profile-Real Residence'

@@ -4,6 +4,7 @@ import { createContext, useEffect, useState } from "react";
 import app from "../firebase/firebase.config";
 import { GithubAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext(null);
 
@@ -13,11 +14,18 @@ const githubProvider=new GithubAuthProvider();
 
 
 const AuthProviders = ({ children }) => {
+
+
+
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+
+
+
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
+        
     }
     const signIn = (email, password) => {
         setLoading(true);
@@ -75,6 +83,9 @@ const updateUserProifile=(name,photo)=>{
   updateProfile(auth.currentUser, {
     displayName: name, photoURL: photo
   })
+ 
+  
+  
 }
 
     const logOut = () => {

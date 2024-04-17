@@ -1,6 +1,6 @@
 //import React from 'react';
 
-import { Link, Navigate, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import NavBar from "../../SharedComponent/NavBar/NavBar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../authProvider/AuthProviders";
@@ -12,38 +12,41 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const SignUp = () => {
+    const navigate=useNavigate();
+  const location=useLocation();
+  const form =location?.state || '/'
     const { createUser,updateUserProifile } = useContext(AuthContext);
     const [registerError,setRegisterError]=useState('');
     //const [registerSuccess,setRegisterSuccess]=useState('');
     const [show,setShow]=useState(false)
 
-    const location = useLocation();
-    console.log(location?.state);
+    // const location = useLocation();
+    // console.log(location?.state);
 
 
-    const handleRegister = e => {
-        e.preventDefault();
-        console.log(e.currentTarget);
-        const form = new FormData(e.currentTarget);
+    // const handleRegister = e => {
+    //     e.preventDefault();
+    //     console.log(e.currentTarget);
+    //     const form = new FormData(e.currentTarget);
 
-        const name = form.get('name');
-        const photo = form.get('photo');
-        const email = form.get('email');
-        const password = form.get('password');
-        console.log(name, photo, email, password);
-         // create user
-         createUser(email, password)
-         .then(result => {
-             console.log(result.user)
-             updateUserProifile()
-         })
-         .catch(error => {
-             console.error(error)
-         })
+    //     const name = form.get('name');
+    //     const photo = form.get('photo');
+    //     const email = form.get('email');
+    //     const password = form.get('password');
+    //     console.log(name, photo, email, password);
+    //      // create user
+    //      createUser(email, password)
+    //      .then(result => {
+    //          console.log(result.user)
+    //          updateUserProifile()
+    //      })
+    //      .catch(error => {
+    //          console.error(error)
+    //      })
 
     
 
-    }
+    // }
     const {
         register,
         handleSubmit,
@@ -83,10 +86,9 @@ const SignUp = () => {
          .then(result => {
             toast.success("Sign Up SuccessFull!");
              updateUserProifile(name,photo)
-             .then(()=>{
-               // setRegisterSuccess('Sign Up Completed')
-                return <Navigate  to="/"></Navigate>
-             })
+             if(result.user){
+                navigate(form);
+              }
          })
          .catch(error => {
              console.error(error)
@@ -110,7 +112,7 @@ const SignUp = () => {
                         <label className="label">
                             <span className="label-text">Photo URL</span>
                         </label>
-                        <input type="text" {...register("photo")} name="photo" placeholder="Photo URL" className="input input-bordered" />
+                        <input type="text" required {...register("photo")} name="photo" placeholder="Photo URL" className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">
