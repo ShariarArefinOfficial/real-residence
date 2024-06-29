@@ -7,7 +7,7 @@ const Properties = ({pro}) => {
     const {id,estate_title,image,location,price,status,area,segment_name}=pro
     //console.log(pro)
   return (
-    <div>
+    <div className="mr-0 md:mr-5">
       <div className=" p-4 bg-white border-2  w-96  image-full rounded-xl animate__animated  animate__fadeInUp">
         <figure >
           <img

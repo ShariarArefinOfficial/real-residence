@@ -86,9 +86,9 @@ const SignUp = () => {
          .then(result => {
             toast.success("Sign Up SuccessFull!");
              updateUserProifile(name,photo)
-             if(result.user){
-                navigate(form);
-              }
+            //  if(result.user){
+            //     navigate(form);
+            //   }
          })
          .catch(error => {
              console.error(error)

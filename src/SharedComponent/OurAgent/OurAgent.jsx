@@ -6,7 +6,8 @@ const OurAgent = () => {
       <h1 className="text-center text-black font-bold text-3xl mb-5">
         Meet Our Agent
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+      <div className="flex justify-center items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
         <div>
           <div className="card w-96 bg-base-100 border-2">
             <figure className="px-10 pt-10">
@@ -58,6 +59,7 @@ const OurAgent = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

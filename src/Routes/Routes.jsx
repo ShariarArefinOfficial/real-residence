@@ -12,6 +12,7 @@ import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 import NotFound from "../SharedComponent/NotFound/NotFound";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import Profile from "../Pages/Profile/Profile";
+import RunningProperty from "../Pages/RunningProperty/RunningProperty";
 
 const router = createBrowserRouter([
     {
@@ -53,7 +54,8 @@ const router = createBrowserRouter([
         {
           path:'/myprofile',
           element:<Profile></Profile>,
-        }
+        },
+     
 
 
        
